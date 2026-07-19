@@ -36,4 +36,21 @@ See you soon! ✨`;
 }
 
 export function buildOrderConfirmationMessage(order) {
-  const itemsList = (order.items || [])
+  const itemsList = (order.items || []).map(item => 
+    `• ${item.name || item.product_name} x${item.quantity || 1} - AED ${item.price || item.total_price || '—'}`
+  ).join('\n');
+
+  return `🛍️ *GlamDoor Order Confirmation*
+
+Hello ${order.customer_name || 'Customer'}!
+
+Your order has been confirmed:
+
+📦 Order #${order.id || '—'}
+${itemsList}
+💰 Total: AED ${order.total_price || order.final_price || '—'}
+📍 Delivery: ${order.delivery_address || 'Store pickup'}
+
+Thank you for shopping with GlamDoor!
+Where Beauty Meets Trust ✨`;
+}
