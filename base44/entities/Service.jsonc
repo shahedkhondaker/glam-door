@@ -1,0 +1,40 @@
+{
+  "name": "Service",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "massage",
+        "facial",
+        "hair",
+        "nails",
+        "makeup",
+        "spa",
+        "wellness",
+        "beauty"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "duration_mins": {
+      "type": "number"
+    },
+    "price": {
+      "type": "number"
+    },
+    "image_url": {
+      "type": "string"
+    },
+    "salon_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "category",
+    "price"

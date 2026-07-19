@@ -1,0 +1,69 @@
+{
+  "name": "Professional",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "specialization": {
+      "type": "string"
+    },
+    "area": {
+      "type": "string"
+    },
+    "is_home_based": {
+      "type": "boolean"
+    },
+    "rating": {
+      "type": "number"
+    },
+    "salon_id": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "string"
+    },
+    "image_url": {
+      "type": "string"
+    },
+    "whatsapp": {
+      "type": "string"
+    },
+    "experience_years": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "name",
+    "specialization",
+    "area"
+  ],
+  "rls": {
+    "create": null,
+    "read": null,
+    "update": {
+      "$or": [
+        {
+          "created_by_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "$or": [
+        {
+          "created_by_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    }
+  }
+}

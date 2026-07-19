@@ -1,0 +1,114 @@
+{
+  "name": "Salon",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "salon",
+        "home_based",
+        "beauty_clinic",
+        "wellness_center",
+        "nail_studio"
+      ]
+    },
+    "area": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "image_url": {
+      "type": "string"
+    },
+    "cover_image_url": {
+      "type": "string"
+    },
+    "rating": {
+      "type": "number"
+    },
+    "review_count": {
+      "type": "number"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "whatsapp": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "is_featured": {
+      "type": "boolean"
+    },
+    "is_verified": {
+      "type": "boolean"
+    },
+    "commission_rate": {
+      "type": "number"
+    },
+    "subscription_plan": {
+      "type": "string",
+      "enum": [
+        "free",
+        "growth",
+        "premium"
+      ]
+    },
+    "specialties": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "services_count": {
+      "type": "number"
+    },
+    "weekly_hours": {
+      "type": "string"
+    },
+    "blocked_dates": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "name",
+    "type",
+    "area"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": null,
+    "update": {
+      "$or": [
+        {
+          "created_by_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
