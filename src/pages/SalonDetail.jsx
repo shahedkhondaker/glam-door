@@ -3,8 +3,8 @@ const db = globalThis.__B44_DB__ || { auth:{ isAuthenticated: async()=>false, me
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import {
-  Star, MapPin, BadgeCheck, Phone, MessageCircle, Clock, Calendar,
-  Check, ArrowLeft, Sparkles, Home,
+  Star, MapPin, BadgeCheck, Phone, MessageCircle,
+  Check, ArrowLeft, Home,
 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';

@@ -2,15 +2,13 @@ const db = globalThis.__B44_DB__ || { auth:{ isAuthenticated: async()=>false, me
 
 import React, { useState, useEffect } from 'react';
 import {
-  Calendar, DollarSign, Users, Store, TrendingUp, Clock,
-  Check, X, Phone, MapPin, Search,
+  Calendar, DollarSign, Users, Store, TrendingUp, MapPin, Search,
 } from 'lucide-react';
 import {
   AreaChart, Area, ResponsiveContainer, XAxis, YAxis, Tooltip, CartesianGrid,
 } from 'recharts';
 
 import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
 import DashboardSidebar from '@/components/DashboardSidebar';
 
 const revenueData = [

@@ -3,8 +3,7 @@ const db = globalThis.__B44_DB__ || { auth:{ isAuthenticated: async()=>false, me
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Calendar, DollarSign, Scissors, Star, Clock,
-  MapPin, Check, X, TrendingUp, Users, Sparkles,
+  Calendar, DollarSign, Scissors, Star, Clock, Check, TrendingUp, Users, Sparkles,
   FileText, Award, BarChart3, Lightbulb, Bell, Percent, Ticket,
 } from 'lucide-react';
 import {
