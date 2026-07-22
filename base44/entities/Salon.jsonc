@@ -92,7 +92,7 @@
         "role": "admin"
       }
     },
-    "read": null,
+    "read": true,
     "update": {
       "$or": [
         {

@@ -52,8 +52,10 @@
     "discount_value"
   ],
   "rls": {
-    "create": null,
-    "read": null,
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "read": true,
     "update": {
       "$or": [
         {

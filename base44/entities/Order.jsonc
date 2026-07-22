@@ -46,7 +46,7 @@
     "total"
   ],
   "rls": {
-    "create": null,
+    "create": true,
     "read": {
       "$or": [
         {

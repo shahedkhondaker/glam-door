@@ -30,8 +30,8 @@
     "rating"
   ],
   "rls": {
-    "create": null,
-    "read": null,
+    "create": true,
+    "read": true,
     "update": {
       "$or": [
         {
