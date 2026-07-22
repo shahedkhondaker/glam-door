@@ -1,5 +1,5 @@
 import React from 'react';
-import { Clock } from 'lucide-react';
+import { Clock, Sparkles } from 'lucide-react';
 
 const categoryLabels = {
   massage: 'Massage',
