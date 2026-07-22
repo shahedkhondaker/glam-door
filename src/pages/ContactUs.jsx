@@ -1,8 +1,6 @@
-const db = globalThis.__B44_DB__ || { auth:{ isAuthenticated: async()=>false, me: async()=>null }, entities:new Proxy({}, { get:()=>({ filter:async()=>[], get:async()=>null, create:async()=>({}), update:async()=>({}), delete:async()=>({}) }) }), integrations:{ Core:{ UploadFile:async()=>({ file_url:'' }) } } };
-
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Send, MessageSquare, Check } from 'lucide-react';
-
+import { base44 } from '@/api/base44Client';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -35,7 +33,7 @@ export default function ContactUs() {
     }
     setSubmitting(true);
     try {
-      await db.integrations.Core.InvokeLLM({
+      await base44.integrations.Core.InvokeLLM({
         prompt: `A website visitor submitted a contact form. Create a brief, professional summary of their inquiry for the GlamDoor team.\n\nName: ${form.name}\nEmail: ${form.email}\nSubject: ${form.subject || 'General Inquiry'}\nMessage: ${form.message}\n\nSummary:`,
       });
       setSent(true);

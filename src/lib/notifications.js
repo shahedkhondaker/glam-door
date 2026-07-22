@@ -37,3 +37,18 @@ See you soon! ✨`;
 
 export function buildOrderConfirmationMessage(order) {
   const itemsList = (order.items || [])
+    .map((item) => `- ${item.name || item.title || 'Item'} x${item.quantity || 1}`)
+    .join('\n')
+
+  return `🧾 *Order Confirmation*
+
+Hello ${order.customer_name || order.customer || 'Customer'}!
+
+Your order has been confirmed:
+
+${itemsList}
+
+Total: AED ${order.total_price || order.amount || '—'}
+
+Thank you for choosing GlamDoor!`;
+}

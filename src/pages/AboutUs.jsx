@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Sparkles, Heart, Shield, Users, ArrowRight,
+  Sparkles, Heart, Shield, Users, Award, Globe, ArrowRight,
+  Star, Calendar, Check, MapPin, TrendingUp, HandHeart,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 

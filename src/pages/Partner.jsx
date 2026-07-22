@@ -2,7 +2,7 @@ const db = globalThis.__B44_DB__ || { auth:{ isAuthenticated: async()=>false, me
 
 import React, { useState } from 'react';
 import {
-  Sparkles, Users, TrendingUp, DollarSign, Shield,
+  Sparkles, Users, TrendingUp, DollarSign, Shield, Check,
   Store, Home, ArrowRight, Star, Zap,
 } from 'lucide-react';
 
