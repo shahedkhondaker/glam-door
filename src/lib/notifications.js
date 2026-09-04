@@ -21,6 +21,24 @@ Thank you for choosing GlamDoor!
 Where Beauty Meets Trust ✨`;
 }
 
+export async function sendBookingNotifications(booking) {
+  const message = buildBookingConfirmationMessage(booking);
+
+  return {
+    email: false,
+    whatsappLink: booking.customer_phone ? generateWhatsAppLink(booking.customer_phone, message) : '',
+  };
+}
+
+export async function sendOrderNotifications(order) {
+  const message = buildOrderConfirmationMessage(order);
+
+  return {
+    email: false,
+    whatsappLink: order.customer_phone ? generateWhatsAppLink(order.customer_phone, message) : '',
+  };
+}
+
 export function buildReminderMessage(booking) {
   return `⏰ *GlamDoor Appointment Reminder*
 
