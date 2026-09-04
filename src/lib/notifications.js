@@ -44,6 +44,15 @@ export async function sendBookingNotifications(booking) {
   };
 }
 
+export async function sendOrderNotifications(order) {
+  const message = buildOrderConfirmationMessage(order);
+  const whatsappLink = generateWhatsAppLink(order.customer_phone, message);
+  return {
+    email: true,
+    whatsappLink,
+  };
+}
+
 export function buildOrderConfirmationMessage(order) {
   const itemsList = (order.items || [])
     .map((item) => `- ${item.name || item.title || 'Item'} x${item.quantity || 1}`)
