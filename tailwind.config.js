@@ -38,3 +38,18 @@ module.exports = {
         },
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))'
+        },
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))'
+      },
+      fontFamily: {
+        heading: ['Cormorant Garamond', 'ui-serif', 'Georgia', 'serif'],
+        body: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['Cormorant Garamond', 'ui-serif', 'Georgia', 'serif'],
+      }
+    }
+  },
+  plugins: [require('tailwindcss-animate')]
+}

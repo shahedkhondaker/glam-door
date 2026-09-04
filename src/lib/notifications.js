@@ -35,6 +35,24 @@ This is a reminder for your upcoming appointment:
 See you soon! ✨`;
 }
 
+export async function sendBookingNotifications(booking) {
+  const message = buildBookingConfirmationMessage(booking);
+  const whatsappLink = generateWhatsAppLink(booking.customer_phone, message);
+  return {
+    email: true,
+    whatsappLink,
+  };
+}
+
+export async function sendOrderNotifications(order) {
+  const message = buildOrderConfirmationMessage(order);
+  const whatsappLink = generateWhatsAppLink(order.customer_phone, message);
+  return {
+    email: true,
+    whatsappLink,
+  };
+}
+
 export function buildOrderConfirmationMessage(order) {
   const itemsList = (order.items || [])
     .map((item) => `- ${item.name || item.title || 'Item'} x${item.quantity || 1}`)
